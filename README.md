@@ -20,7 +20,7 @@ Can use most [git commands](https://yadm.io/docs/common_commands#)
 ## Adding changes 
 Run`yadm add` `{path-to-add}`  
 `yadm commit` 
-`yadm push -u origin master:main` 
+`yadm push -u origin master:main`  
 
 ## Includes
 - [nvim](https://neovim.io/)
