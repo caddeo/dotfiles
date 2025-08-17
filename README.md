@@ -14,13 +14,13 @@ Setup using [yadm](https://yadm.io/)
 Can use most [git commands](https://yadm.io/docs/common_commands#) 
 
 ## Cloning
-`yadm clone git@github.com:caddeo/dotfiles.git`
-`yadm status`
+`yadm clone git@github.com:caddeo/dotfiles.git` 
+`yadm status` 
 
 ## Adding changes 
-Run`yadm add` `{path-to-add}` 
-`yadm commit`
-`yadm push -u origin master:main`
+Run`yadm add` `{path-to-add}`  
+`yadm commit` 
+`yadm push -u origin master:main` 
 
 ## Includes
 - [nvim](https://neovim.io/)
