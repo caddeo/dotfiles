@@ -18,7 +18,7 @@ Can use most [git commands](https://yadm.io/docs/common_commands#)
 `yadm status` 
 
 ## Adding changes 
-Run`yadm add` `{path-to-add}`  
+`yadm add` `{path-to-add}`  
 `yadm commit` 
 `yadm push -u origin master:main`  
 
