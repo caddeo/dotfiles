@@ -15,11 +15,14 @@ Can use most [git commands](https://yadm.io/docs/common_commands#)
 
 ## Cloning
 `yadm clone git@github.com:caddeo/dotfiles.git` 
+
 `yadm status` 
 
 ## Adding changes 
-`yadm add` `{path-to-add}`  
-`yadm commit` 
+`yadm add {path-to-add}`  
+
+`yadm commit`
+
 `yadm push -u origin master:main`  
 
 ## Includes
