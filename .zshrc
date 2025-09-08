@@ -165,8 +165,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-alias pex="kubectl exec -it -n pulsar pulsar-toolset-1 -- /bin/bash"
-alias pa="bin/pulsar-admin"
 alias cd="z"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
