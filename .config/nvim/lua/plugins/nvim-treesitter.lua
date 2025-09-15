@@ -22,6 +22,11 @@ return {
         "vim",
         "yaml",
         "rust",
+        "c_sharp",
+        "go",
+        "gomod",
+        "gowork",
+        "gosum",
       })
     end,
   },
