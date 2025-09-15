@@ -16,10 +16,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(history)
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
-export LS_COLORS="rs=0:no=00:mi=00:mh=00:ln=01;36:or=01;31:di=01;34:ow=04;01;34:st=34:tw=04;34:pi=01;33:so=01;33:do=01;33:bd=01;33:cd=01;33:su=01;35:sg=01;35:ca=01;35:ex=01;32:"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -75,79 +72,38 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# zsh essentials
-#HISTFILE=".histfile"             # Save 100000 lines of history
-#HISTSIZE=100000
-#SAVEHIST=100000
-#setopt BANG_HIST                 # Treat the '!' character specially during expansion.
-#setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
-#setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
-#setopt SHARE_HISTORY             # Share history between all sessions.
-#setopt HIST_IGNORE_DUPS          # Don't record an entry that was just recorded again.
-#setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
-#setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
-
-source <(kubectl completion zsh)
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
-ZSH_HIGHLIGHT_PATTERNS=('rm -rf *' 'fg=white,bold,bg=red')
-
 plugins=(
-    alias-tips
-    autoupdate
-    aws
-    command-not-found
-    conda
-    dotnet
-    dotenv
-    docker
-    docker-compose
-    fzf
-    gh
-    git
-    git-auto-fetch
-    github
-    gitfast
-    gitignore
-    golang
-    helm
-    kubectl
-    kubectx
-    ls
-    mvn
-    node
-    npm
-    nvm
-    tmux
-    vscode
-    sudo
-    ssh
-    ssh-agent
-    z
-    zsh-autosuggestions
-    zsh-interactive-cd
-    zsh-syntax-highlighting
-    zsh-interactive-cd
-    ohmyzsh-full-autoupdate
+	1password
+	command-not-found
+	dnf
+	git
+	github
+	gitignore
+	vscode
+	sudo
+	rust
+	tmux
+	z
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	fast-syntax-highlighting
+	zsh-autocomplete
 )
 
-RPS1='$(kubectx_prompt_info)'
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-export PATH="$PATH:/home/deo/.dotnet"
-export PATH="$PATH:/snap/bin"
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
@@ -165,33 +121,19 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # - $ZSH_CUSTOM/aliases.zsh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
-alias cd="z"
+#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(zoxide init zsh)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/deo/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/deo/.anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/deo/.anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/deo/.anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH=$HOME/.local/bin:$PATH
-export ZED_ALLOW_EMULATED_GPU=1
-alias zed="WAYLAND_DISPLAY= zed"
+
+. "$HOME/.local/bin/env"
