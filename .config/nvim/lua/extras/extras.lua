@@ -1,5 +1,7 @@
 return {
   -- extras
+  -- ai
+  { { import = "lazyvim.plugins.extras.ai.copilot-chat" } },
   -- lang
   {
     { import = "lazyvim.plugins.extras.lang.angular" },
@@ -23,7 +25,12 @@ return {
   -- dap
   { { import = "lazyvim.plugins.extras.dap.core" }, { import = "lazyvim.plugins.extras.dap.nlua" } },
   -- editor
-  { { import = "lazyvim.plugins.extras.editor.mini-diff" }, { import = "lazyvim.plugins.extras.editor.telescope" } },
+  {
+    { import = "lazyvim.plugins.extras.editor.mini-diff" },
+    { import = "lazyvim.plugins.extras.editor.telescope" },
+    { import = "lazyvim.plugins.extras.editor.illuminate" },
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
+  },
   -- formatting
   -- lsp
   { import = "lazyvim.plugins.extras.lsp.none-ls" },
@@ -34,6 +41,8 @@ return {
     { import = "lazyvim.plugins.extras.util.dot" },
     { import = "lazyvim.plugins.extras.util.gitui" },
     { import = "lazyvim.plugins.extras.util.project" },
+    { import = "lazyvim.plugins.extras.util.octo" },
+    { import = "lazyvim.plugins.extras.util.rest" },
   },
   {
     { import = "lazyvim.plugins.extras.linting.eslint" },
