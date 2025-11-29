@@ -79,15 +79,22 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	1password
+  aws
 	command-not-found
 	dnf
+  docker
+  docker-compose
+  dotenv
 	git
 	github
 	gitignore
-	vscode
+  golang
+  helm
+  kubectl
+  kubectx
+  minikube
 	sudo
 	rust
-	tmux
 	z
 	zsh-autosuggestions
 	zsh-syntax-highlighting
