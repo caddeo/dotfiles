@@ -1,14 +1,75 @@
-# Home setup
-Simple setup I use at home when programming, mostly in rust or golang. 
+# Programming setup
+I use this setup both for work and home 
 
-- Ghostty along with oh-my-zsh as my standard terminal
-- neovim as the editor for mainly rust and golang
+My home setup is at [some-other-branch-wip](..link/to/branch)
 
-# Setup
-Setup using [yadm](https://yadm.io/)
-Can use most [git commands](https://yadm.io/docs/common_commands#) 
+It's configured both for MAC OS and Fedora
 
-## Cloning
+## Features
+
+- Ghostty Terminal
+- Fish
+- Nvim using Lazyvim
+
+### Configured for
+- Kubernetes
+- Terraform
+- AWS
+- Grafana
+- NodeJS
+- Redis
+- PostgreSQL
+- Rust
+- C
+- Javascript
+- Go
+
+## Requirements
+
+## Setup
+
+### Ghostty 
+
+#### OSX
+```shell
+brew install --cask ghostty
+```
+
+#### Fedora
+```shell
+dnf copr enable scottames/ghostty
+dnf install ghostty
+```
+
+### Fish
+...replace oh my zsh
+
+### NVIM
+
+#### OSX 
+```shell
+brew install neovim
+```
+#### Fedora
+```shell
+sudo dnf install -y neovim python3-neovi
+``` 
+### YADM
+
+Install using
+
+#### OSX 
+```shell
+brew install yadm
+```
+
+### Fedora 42>
+```shell
+dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_42/home:TheLocehiliosan:yadm.repo
+dnf install yadm
+```
+
+## Getting started
 `yadm clone git@github.com:caddeo/dotfiles.git` 
 
 `yadm status` 
@@ -20,15 +81,3 @@ Can use most [git commands](https://yadm.io/docs/common_commands#)
 
 `yadm push -u origin master:main`  
 
-## Includes
-- [nvim](https://neovim.io/)
-- [oh-my-zsh](https://ohmyz.sh/)
-- [ghostty](https://ghostty.org/)
-
-## Todo 
-- Redo my zsh setup
-- Include vscode profile (used for C#.. change to neovim soon?)
-- Include bootstrapping
-- Include WSL work setup for both neovim + vscode (I run a wsl setup for neovim and another for vscode)
-- Add oh-my-zsh plugins (need to redo my config first)
-- Remap [Lazyvim Keymaps](https://www.lazyvim.org/keymaps) from US keyboard to DK keyboard (..or use US keyboard? 🤔) - awkward keybinds that includes `[` `]` `@` `£` `$` `{` `}` `|` `^` `"` 
