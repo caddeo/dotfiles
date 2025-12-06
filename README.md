@@ -55,9 +55,6 @@ brew install neovim
 sudo dnf install -y neovim python3-neovi
 ``` 
 ### YADM
-
-Install using
-
 #### OSX 
 ```shell
 brew install yadm
