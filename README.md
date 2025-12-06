@@ -63,7 +63,7 @@ Install using
 brew install yadm
 ```
 
-### Fedora 42>
+#### Fedora 42>
 ```shell
 dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_42/home:TheLocehiliosan:yadm.repo
 dnf install yadm
