@@ -11,7 +11,9 @@ It's configured both for MAC OS and Fedora
 - Fish
 - Nvim using Lazyvim
 
-### Configured for
+### Languages & Technologies
+*These are the main languages and technologies I use.*
+
 - Kubernetes
 - Terraform
 - AWS

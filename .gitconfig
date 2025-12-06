@@ -1,3 +1,16 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = nvim
+	ignorecase = false
 [user]
 	email = "patrick@caddeo.dk"
 	name = "caddeo"
+[github]
+	user = "caddeo"
+[diff]
+  tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
+[mergetool "nvimdiff"]
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
