@@ -44,7 +44,11 @@ dnf install ghostty
 ```
 
 ### Fish
-...replace oh my zsh
+
+### Fedora
+```shell
+dnf install fish
+```
 
 ### NVIM
 
