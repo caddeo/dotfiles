@@ -61,16 +61,16 @@ dnf install ghostty
 
 ### Fish
 
-Fedora
-
-```shell
-dnf install fish
-```
-
 OSX
 
 ```shell
 brew install fish
+```
+
+Fedora
+
+```shell
+dnf install fish
 ```
 
 ### NVIM
