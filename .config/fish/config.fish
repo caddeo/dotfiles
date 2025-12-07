@@ -32,3 +32,5 @@ set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
     source $LOCAL_CONFIG
 end
+~/.local/bin/mise activate fish | source
+~/.local/bin/mise activate fish | source
