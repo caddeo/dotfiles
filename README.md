@@ -200,6 +200,8 @@ Some cool Keymaps I forget often
 ## TODO
 
 - Make a fancy install script for [Getting started](#getting-started)
+- Figure out why fish is super slow when pressing tab to autocomplete
+- Should `.config/nvim/lazy-lock.json` and `.config/fish/fish_variables` be on git?
 
 ### Set up aliases
 
