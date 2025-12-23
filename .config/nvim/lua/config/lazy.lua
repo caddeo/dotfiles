@@ -17,9 +17,34 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
-    { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    { "LazyVim/LazyVim", import = "lazyvim.plugins", opts = { colorscheme = "cyberdream" } },
+    -- extras
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
+    { import = "lazyvim.plugins.extras.coding.mini-comment" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.dap.core" },
+    { import = "lazyvim.plugins.extras.dap.nlua" },
+    { import = "lazyvim.plugins.extras.editor.inc-rename" },
+    { import = "lazyvim.plugins.extras.editor.mini-move" },
+    { import = "lazyvim.plugins.extras.editor.neo-tree" },
+    { import = "lazyvim.plugins.extras.lang.clangd" },
+    { import = "lazyvim.plugins.extras.lang.cmake" },
+    { import = "lazyvim.plugins.extras.lang.docker" },
+    { import = "lazyvim.plugins.extras.lang.git" },
+    { import = "lazyvim.plugins.extras.lang.go" },
+    { import = "lazyvim.plugins.extras.lang.helm" },
+    { import = "lazyvim.plugins.extras.lang.json" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+    { import = "lazyvim.plugins.extras.lang.rust" },
+    { import = "lazyvim.plugins.extras.lang.terraform" },
+    { import = "lazyvim.plugins.extras.lang.toml" },
+    { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.yaml" },
+    { import = "lazyvim.plugins.extras.lsp.none-ls" },
+    { import = "lazyvim.plugins.extras.test.core" },
+    { import = "lazyvim.plugins.extras.util.gh" },
+    { import = "lazyvim.plugins.extras.util.dot" },
     -- import/override with your plugins
-    { import = "extras" },
     { import = "plugins" },
   },
   defaults = {

@@ -1,0 +1,6 @@
+[tools]
+fzf = "latest"
+ghq = "latest"
+go = "latest"
+node = "latest"
+rust = "latest"

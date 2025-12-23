@@ -1,12 +1,5 @@
 return {
-  -- add catppuccin
-  { "catppuccin/nvim" },
-
-  -- Configure LazyVim to load catppuccin
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
-  },
+  "scottmckendry/cyberdream.nvim",
+  lazy = false,
+  priority = 1000,
 }
