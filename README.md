@@ -33,6 +33,22 @@ It's configured both for MAC OS and Fedora
 - **OSX**: [Homebrew](https://brew.sh/)
 - a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
 
+## Existing NVIM setup
+
+According to the [lazyvim documentation](https://www.lazyvim.org/installation)
+
+Make a backup of your current Neovim files:
+
+```shell
+# required
+mv ~/.config/nvim{,.bak}
+
+# optional but recommended
+mv ~/.local/share/nvim{,.bak}
+mv ~/.local/state/nvim{,.bak}
+mv ~/.cache/nvim{,.bak}
+```
+
 ## Setup
 
 ### Font Installation
@@ -72,6 +88,24 @@ Fedora
 ```shell
 dnf install fish
 ```
+
+Following the [fish documentation](https://fishshell.com/docs/current/#default-shell)
+
+To change your login shell to fish:
+
+1. Add the shell to `/etc/shells` with:
+
+```shell
+command -v fish | sudo tee -a /etc/shells
+```
+
+1. Change your default shell with:
+
+```shell
+chsh -s "$(command -v fish)"
+```
+
+To change it back to another shell, substitute `fish` with `bash`, `tcsh` or `zsh` as appropriate in the above command.
 
 ### NVIM
 
@@ -119,6 +153,23 @@ Install scripts for
 
 and for [languages and technologies](#languages-technologies)
 
+```
+# install mise-en-place
+curl https://mise.run | sh
+
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# install eza
+cargo install eza
+
+# install luarocks
+sudo dnf install luarocks
+
+# install fzf
+mise use -g fzf@latest
+```
+
 ```shell
 yadm clone git@github.com:caddeo/dotfiles.git
 yadm status
@@ -147,6 +198,8 @@ Some cool Keymaps I forget often
 ### Nvim
 
 ## TODO
+
+- Make a fancy install script for [Getting started](#getting-started)
 
 ### Set up aliases
 
