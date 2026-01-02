@@ -136,20 +136,6 @@ dnf config-manager addrepo --from-repofile=https://download.opensuse.org/reposit
 dnf install yadm
 ```
 
-### Starship
-
-OSX
-
-```shell
-brew install starship
-```
-
-OSX
-
-```shell
-curl -sS https://starship.rs/install.sh | sh
-```
-
 ## Getting started
 
 Install scripts for
@@ -159,7 +145,6 @@ Install scripts for
 - ripgrep
 - fd
 - Fisher
-- Starship
 - fzf
 - z
 - eza
