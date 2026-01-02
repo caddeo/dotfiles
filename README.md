@@ -14,7 +14,7 @@ It's configured both for MAC OS and Fedora
 
 ### Languages & Technologies
 
-*These are the main languages and technologies I use.*
+_These are the main languages and technologies I use._
 
 - Kubernetes
 - Terraform
@@ -146,7 +146,7 @@ Install scripts for
 - ripgrep
 - fd
 - Fisher
-- Tide
+- Starship
 - fzf
 - z
 - eza
@@ -157,17 +157,11 @@ and for [languages and technologies](#languages-technologies)
 # install mise-en-place
 curl https://mise.run | sh
 
-# install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
 # install eza
 cargo install eza
 
 # install luarocks
 sudo dnf install luarocks
-
-# install fzf
-mise use -g fzf@latest
 ```
 
 ```shell
@@ -178,9 +172,9 @@ yadm status
 ## Adding changes
 
 ```
-yadm add {path-to-add} 
+yadm add {path-to-add}
 yadm commit
-yadm push -u origin master:main  
+yadm push -u origin master:main
 ```
 
 ## Keymaps
@@ -201,8 +195,9 @@ Some cool Keymaps I forget often
 
 - Make a fancy install script for [Getting started](#getting-started)
 - Figure out why fish is super slow when pressing tab to autocomplete
-- Should `.config/nvim/lazy-lock.json` and `.config/fish/fish_variables` be on git?
+- Should `.config/nvim/lazy-lock.json`
+- New nvim theme
 
 ### Set up aliases
 
-Fish has something similar to aliases. I need all my git commands etc set up
+Using fish `abbr` need to create my common git commands
