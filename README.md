@@ -53,7 +53,13 @@ mv ~/.cache/nvim{,.bak}
 
 ### Font Installation
 
-Download MesloLG Nerd Font from [nerdfonts.com](https://www.nerdfonts.com/font-downloads) and install them
+Download _JetBrainsMono Nerd Font_ from [Nerdfonts.com](https://www.nerdfonts.com/font-downloads)
+Install
+
+- JetBrainsMonoNerdFontMono-Regular
+- JetBrainsMonoNerdFontMono-Bold
+- JetBrainsMonoNerdFontMono-BoldItalic
+- JetBrainsMonoNerdFontMono-Italic
 
 ### Ghostty
 
