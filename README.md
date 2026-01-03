@@ -53,12 +53,7 @@ mv ~/.cache/nvim{,.bak}
 
 ### Font Installation
 
-Download these four ttf files:
-
-- [MesloLGS NF Regular.ttf](https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_regular.ttf?raw=true)
-- [MesloLGS NF Bold.ttf](https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold.ttf?raw=true)
-- [MesloLGS NF Italic.ttf](https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_italic.ttf?raw=true)
-- [MesloLGS NF Bold Italic.ttf](https://github.com/IlanCosman/tide/blob/assets/fonts/mesloLGS_NF_bold_italic.ttf?raw=true)
+Download MesloLG Nerd Font from [nerdfonts.com](https://www.nerdfonts.com/font-downloads) and install them
 
 ### Ghostty
 
