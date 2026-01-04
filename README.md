@@ -155,12 +155,17 @@ and for [languages and technologies](#languages-technologies)
 ```
 # install mise-en-place
 curl https://mise.run | sh
+mise install
 
 # install eza
 cargo install eza
 
 # install luarocks
 sudo dnf install luarocks
+
+# install Fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher update
 ```
 
 ```shell
