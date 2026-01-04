@@ -2,5 +2,6 @@
 fzf = "latest"
 ghq = "latest"
 go = "latest"
+golangci-lint = "latest"
 node = "latest"
 rust = "latest"
