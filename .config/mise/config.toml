@@ -1,9 +1,11 @@
 [tools]
+ansible = "latest"
 fzf = "latest"
 ghq = "latest"
 go = "latest"
 golangci-lint = "latest"
 node = "latest"
-python = ["3.10", "3.11"]
+pipx = "latest"
+python = "latest"
 rust = "latest"
 uv = "latest"
