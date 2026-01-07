@@ -6,6 +6,8 @@ set -gx TERM xterm-256color
 
 # aliases
 alias g git
+alias k="kubectl"
+alias argo_ui="kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d | pbcopy && kubectl -n argocd port-forward svc/argocd-server 8080:80 & sleep 2 && open http://localhost:8080 && fg"
 
 set -gx EDITOR nvim
 
@@ -16,6 +18,9 @@ set -gx PATH ~/.local/bin $PATH
 # Go
 set -g GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
+
+set -g KREW_ROOT $HOME/.krew
+set -gx PATH $KREW_ROOT/bin $PATH
 
 switch (uname)
     case Darwin
