@@ -30,4 +30,5 @@ if test -f $LOCAL_CONFIG
 end
 
 ~/.local/bin/mise activate fish | source
+
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
