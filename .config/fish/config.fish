@@ -34,6 +34,11 @@ if test -f $LOCAL_CONFIG
     source $LOCAL_CONFIG
 end
 
+if set -q ZELLIJ
+else
+    zellij
+end
+
 starship init fish | source
 ~/.local/bin/mise activate fish | source
 
