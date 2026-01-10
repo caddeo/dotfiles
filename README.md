@@ -11,6 +11,7 @@ It's configured both for MAC OS and Fedora
 - Ghostty Terminal
 - Fish
 - Nvim using Lazyvim
+- Zellij
 
 ### Languages & Technologies
 
@@ -18,6 +19,7 @@ _These are the main languages and technologies I use._
 
 - Kubernetes
 - Terraform
+- Ansible
 - AWS
 - Grafana
 - NodeJS
@@ -199,8 +201,8 @@ Some cool Keymaps I forget often
 
 - Make a fancy install script for [Getting started](#getting-started)
 - Figure out why fish is super slow when pressing tab to autocomplete
-- Should `.config/nvim/lazy-lock.json`
-- New nvim theme
+- Introduce zellij commandsc
+- Configure Starship to just have git commands, and maybe some package versions
 
 ### Set up aliases
 
