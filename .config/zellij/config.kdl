@@ -209,12 +209,12 @@ default_shell "fish"
 //   - true (default)
 //   - false
 // 
-// mouse_mode false
+mouse_mode false
  
 // Toggle having pane frames around the panes
 // Options:
 //   - true (default, enabled)
-  - false
+// - false
 // 
 pane_frames false
  
