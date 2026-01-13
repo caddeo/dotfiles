@@ -5,7 +5,6 @@
 keybinds clear-defaults=true {
     normal {
       bind "Super c" { Copy; }
-    }
     locked {
       bind "Ctrl g" { SwitchToMode "normal"; }
       bind "Super c" { Copy; }
@@ -105,7 +104,7 @@ keybinds clear-defaults=true {
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Super g" { SwitchToMode "locked"; }
+        bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Super q" { Quit; }
     }
     shared_except "locked" "entersearch" {
