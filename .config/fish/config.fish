@@ -1,4 +1,5 @@
-set fish_greeting ""
+# Unset the default fish greeting text which messes up Zellij
+set fish_greeting
 
 set -gx TERM xterm-256color
 

@@ -3,10 +3,8 @@ if type -q eza
     alias lla "ll -a"
 end
 
-if set -q ZELLIJ
-else
-    zellij
-end
+export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
+eval (zellij setup --generate-auto-start fish | string collect)
 
 # Fzf
 set -g FZF_PREVIEW_FILE_CMD "bat --style=numbers --color=always --line-range :500"
