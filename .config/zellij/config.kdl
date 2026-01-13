@@ -3,8 +3,12 @@
 //
 
 keybinds clear-defaults=true {
+    normal {
+      bind "Super c" { Copy; }
+    }
     locked {
-        bind "Ctrl g" { SwitchToMode "normal"; }
+      bind "Ctrl g" { SwitchToMode "normal"; }
+      bind "Super c" { Copy; }
     }
     pane {
         bind "c" { SwitchToMode "renamepane"; PaneNameInput 0; }
@@ -101,8 +105,8 @@ keybinds clear-defaults=true {
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "locked" "renametab" "renamepane" {
-        bind "Ctrl g" { SwitchToMode "locked"; }
-        bind "Ctrl q" { Quit; }
+        bind "Super g" { SwitchToMode "locked"; }
+        bind "Super q" { Quit; }
     }
     shared_except "locked" "entersearch" {
         bind "enter" { SwitchToMode "locked"; }
@@ -127,9 +131,6 @@ keybinds clear-defaults=true {
     }
     renametab {
         bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
-    }
-    shared_among "renametab" "renamepane" {
-        bind "Ctrl c" { SwitchToMode "locked"; }
     }
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
@@ -209,7 +210,7 @@ default_shell "fish"
 //   - true (default)
 //   - false
 // 
-mouse_mode false
+mouse_mode true
  
 // Toggle having pane frames around the panes
 // Options:
