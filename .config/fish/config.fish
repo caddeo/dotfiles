@@ -2,9 +2,12 @@
 set fish_greeting
 
 set -gx TERM xterm-256color
+set -gx TERMINAL ghostty
+
+fish_vi_key_bindings
 
 # theme
-
+fish_config theme choose "Catppuccin Mocha"
 # aliases
 alias g git
 alias k="kubectl"
