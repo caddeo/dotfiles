@@ -2,32 +2,33 @@
 
 add_newline = false
 format = """
-$sudo
+$sudo\
+$hostname\
 $directory\
 $git_branch\
 $git_status\
 $git_state\
 $character"""
 
-right_format = """
-$aws\
-$kubernetes\
-$python\
-$nodejs\
-$golang\
-$rust\
-$terraform\
-$docker_context\
-$mise"""
+right_format = '$rust$golang$terraform$docker_context$python$docker_context$nodejs' 
+
+[hostname]
+ssh_only = true
+format = '[$hostname](bold yellow) '
+trim_at = "."
+disabled = false
 
 [aws]
-disabled = false
+symbol = " "
 
 [cmd_duration]
 disabled = true
 
 [directory]
-style = "blue"
+read_only = " "
+truncation_length = 10
+truncate_to_repo = true
+style = "bold italic blue"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -36,22 +37,18 @@ style = "blue"
 "Pictures" = " "
 
 [docker_context]
-disabled = false
+symbol = " "
+format = "[$symbol$context]($style) "
+style = "blue bold"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
 
 [env_var]
 disabled = false
 
 [git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
-
-[git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](219) ($ahead_behind$stashed)]($style) "
-style = "cyan"
-
-[git_state]
-format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
+symbol = " "
 
 [golang]
 symbol = ""
@@ -64,14 +61,17 @@ disabled = true
 disabled = false
 
 [nodejs]
-symbol = " "
-format = ' $symbol ($version) ($style)'
+symbol = ""
+format = ' [$symbol ($version)]($style)'
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
 
 [os]
 disabled = true
 
 [python]
-disabled = false
+symbol = " "
+format = '[${symbol}python (${version} )(\($virtualenv\) )]($style)'
 
 [rust]
 symbol = ""
