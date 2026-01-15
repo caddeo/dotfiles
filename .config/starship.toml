@@ -1,49 +1,83 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 add_newline = false
-
 format = """
-$hostname\
+$sudo
 $directory\
 $git_branch\
-$git_state\
 $git_status\
+$git_state\
+$git_metrics\
 $character"""
+
+right_format = """
+$aws\
+$python\
+$nodejs\
+$golang\
+$rust\
+$terraform\
+$docker_context\
+$mise"""
+
+[aws]
+disabled = false
+
+[cmd_duration]
+disabled = true
 
 [directory]
 style = "blue"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[docker_context]
+disabled = false
+
+[env_var]
+disabled = false
 
 [git_branch]
 format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
-style = "cyan"
-conflicted = "​"
-untracked = "​"
-modified = "​"
-staged = "​"
-renamed = "​"
-deleted = "​"
-stashed = "≡"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style) "
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+[git_metrics]
+disabled = false
 
-[python]
-format = "[$virtualenv]($style) "
-style = "bright-black"
-detect_extensions = []
-detect_files = []
+[golang]
+symbol = ""
+format = ' $symbol ($version) ($style) '
+
+[lua]
+disabled = true
 
 [mise]
 disabled = false
 
-[aws]
+[nodejs]
+symbol = " "
+format = ' $symbol ($version) ($style)'
+
+[os]
+disabled = true
+
+[python]
+disabled = false
+
+[rust]
+symbol = ""
+format = ' $symbol ($version) ($style) '
+
+[terraform]
 disabled = false
