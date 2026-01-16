@@ -198,9 +198,10 @@ Some cool Keymaps I forget often
 
 ## TODO
 
+- Start using tmux with tmux nvim plugin
 - Make a fancy install script for [Getting started](#getting-started)
 - Figure out why fish is super slow when pressing tab to autocomplete
-- Configure Starship to just have git commands, and maybe some package versions
+- Configure Starship to just have git commands, and maybe some package versions, make it look more like fish default
 
 ### Set up aliases
 
