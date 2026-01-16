@@ -48,7 +48,7 @@ detect_folders = []
 disabled = false
 
 [git_branch]
-symbol = " "
+disabled = false
 
 [golang]
 symbol = ""
