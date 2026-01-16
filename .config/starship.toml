@@ -6,8 +6,8 @@ $sudo\
 $hostname\
 $directory\
 $git_branch\
-$git_status\
 $git_state\
+$git_status\
 $character"""
 
 right_format = '$rust$golang$terraform$docker_context$python$docker_context$nodejs' 
@@ -28,7 +28,7 @@ disabled = true
 read_only = " "
 truncation_length = 10
 truncate_to_repo = true
-style = "italic blue"
+style = "italic bright-green"
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -48,7 +48,17 @@ detect_folders = []
 disabled = false
 
 [git_branch]
-disabled = false
+format = "[$branch]($style)"
+style = "bright-black"
+
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style) "
+style = "cyan"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 [golang]
 symbol = ""
