@@ -10,16 +10,13 @@ $git_state\
 $git_status\
 $character"""
 
-right_format = '$rust$golang$terraform$docker_context$python$docker_context$nodejs' 
+right_format = '$terraform$docker_context$python$docker_context' 
 
 [hostname]
 ssh_only = true
 format = '[$hostname](bold yellow) '
 trim_at = "."
 disabled = false
-
-[aws]
-symbol = " "
 
 [cmd_duration]
 disabled = true
@@ -61,32 +58,18 @@ stashed = "≡"
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-[golang]
-symbol = ""
-format = ' $symbol ($version) ($style) '
-
 [lua]
 disabled = true
 
 [mise]
 disabled = false
 
-[nodejs]
-symbol = ""
-format = ' [$symbol ($version)]($style)'
-detect_files = ["package.json", ".node-version"]
-detect_folders = ["node_modules"]
-
 [os]
 disabled = true
 
 [python]
 symbol = " "
-format = '[${symbol}python (${version} )(\($virtualenv\) )]($style)'
-
-[rust]
-symbol = ""
-format = ' $symbol ($version) ($style) '
+format = '[(\($virtualenv\) )]($style)'
 
 [terraform]
 disabled = false
