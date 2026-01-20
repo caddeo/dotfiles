@@ -11,6 +11,7 @@ It's configured both for MAC OS and Fedora
 - Ghostty Terminal
 - Fish
 - Nvim using Lazyvim
+- tmux
 
 ### Languages & Technologies
 
@@ -138,6 +139,12 @@ dnf config-manager addrepo --from-repofile=https://download.opensuse.org/reposit
 dnf install yadm
 ```
 
+### tmux
+
+```shell
+brew install tmux
+```
+
 ## Getting started
 
 Install scripts for
@@ -202,6 +209,7 @@ Some cool Keymaps I forget often
 - Make a fancy install script for [Getting started](#getting-started)
 - Figure out why fish is super slow when pressing tab to autocomplete
 - Configure Starship to just have git commands, and maybe some package versions, make it look more like fish default
+- Install tmux nvim navigator
 
 ### Set up aliases
 
