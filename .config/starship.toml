@@ -8,9 +8,10 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$terraform\
+$python\
+$docker_context\
 $character"""
-
-right_format = '$terraform$docker_context$python$docker_context' 
 
 [hostname]
 ssh_only = true
