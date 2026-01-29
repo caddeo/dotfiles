@@ -205,11 +205,11 @@ Some cool Keymaps I forget often
 
 ## TODO
 
-- Start using tmux with tmux nvim plugin
+- Setup [bootstrapping using yadm](https://yadm.io/docs/bootstrap#) based of which OS i am on
 - Make a fancy install script for [Getting started](#getting-started)
-- Figure out why fish is super slow when pressing tab to autocomplete
-- Configure Starship to just have git commands, and maybe some package versions, make it look more like fish default
-- Install tmux nvim navigator
+- Configure Starship to look more like fish default
+- Configure tmux nvim navigator
+- Make a setup for personal-desktop-omarchy, personal-laptop-omarchy and work-laptop-mac [using yadm](https://yadm.io/docs/alternates#)
 
 ### Set up aliases
 
