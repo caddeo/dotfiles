@@ -207,7 +207,6 @@ Some cool Keymaps I forget often
 
 - Setup [bootstrapping using yadm](https://yadm.io/docs/bootstrap#) based of which OS i am on
 - Make a fancy install script for [Getting started](#getting-started)
-- Configure Starship to look more like fish default
 - Configure tmux nvim navigator
 - Make a setup for personal-desktop-omarchy, personal-laptop-omarchy and work-laptop-mac [using yadm](https://yadm.io/docs/alternates#)
 
