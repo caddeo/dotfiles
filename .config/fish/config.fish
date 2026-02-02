@@ -36,7 +36,7 @@ if test -f $LOCAL_CONFIG
     source $LOCAL_CONFIG
 end
 
-starship init fish | source
+# starship init fish | source
 ~/.local/bin/mise activate fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
