@@ -1,7 +1,7 @@
 # font
-font-family = "JetBrainsMono Nerd Font"" 
+font-family = "JetBrainsMono Nerd Font" 
 font-style = regular
-font-size = 9
+font-size = 12
 
 # window
 window-theme = ghostty
@@ -9,7 +9,7 @@ window-padding-x = 14
 window-padding-y = 14
 
 # theme
-theme = Catppuccin Mocha
+theme = Gruvbox Dark
 
 # background
 background-opacity = 0.9
