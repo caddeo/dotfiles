@@ -7,13 +7,13 @@ return {
           settings = {
             gopls = {
               hints = {
-                assignVariableTypes = true,
+                assignVariableTypes = false,
                 compositeLiteralFields = true,
                 compositeLiteralTypes = true,
                 constantValues = true,
                 functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
+                parameterNames = false,
+                rangeVariableTypes = false,
               },
             },
           },
