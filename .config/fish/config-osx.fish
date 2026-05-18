@@ -1,11 +1,10 @@
+# theme
+fish_config theme choose "Catppuccin Mocha"
+
 if type -q eza
     alias ll "eza -l -g --icons"
     alias lla "ll -a"
 end
-
-# Disable zellij for now -- trying ghostty build in 
-# export ZELLIJ_CONFIG_DIR=$HOME/.config/zellij
-# eval (zellij setup --generate-auto-start fish | string collect)
 
 # Fzf
 set -g FZF_PREVIEW_FILE_CMD "bat --style=numbers --color=always --line-range :500"

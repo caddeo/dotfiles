@@ -4,8 +4,6 @@ set fish_greeting
 set -gx TERM xterm-256color
 set -gx TERMINAL ghostty
 
-# theme
-fish_config theme choose "Catppuccin Mocha"
 # aliases
 alias g git
 alias k="kubectl"
@@ -36,7 +34,6 @@ if test -f $LOCAL_CONFIG
     source $LOCAL_CONFIG
 end
 
-# starship init fish | source
 ~/.local/bin/mise activate fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
