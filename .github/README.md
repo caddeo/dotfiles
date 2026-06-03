@@ -4,7 +4,7 @@ I use this setup both for work and home
 
 My home setup is at [some-other-branch-wip](..link/to/branch)
 
-It's configured both for MAC OS and Fedora
+It's configured both for MAC OS and Arch
 
 ## Features
 
