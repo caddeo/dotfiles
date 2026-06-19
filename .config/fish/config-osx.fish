@@ -3,7 +3,7 @@ fish_config theme choose "Catppuccin Mocha"
 
 if type -q eza
     alias ll "eza -l -g --icons"
-    alias lla "ll -a"
+    alias lla "eza -l -a -g --icons"
 end
 
 # Fzf
