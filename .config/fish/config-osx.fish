@@ -1,5 +1,4 @@
-# theme
-fish_config theme choose "Catppuccin Mocha"
+fish_config theme choose default-rgb
 
 if type -q eza
     alias ll "eza -l -g --icons"
