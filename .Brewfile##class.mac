@@ -1,0 +1,84 @@
+# Taps
+tap "aws/tap"
+tap "darrylmorley/whatcable"
+tap "derailed/k9s"
+tap "grafana/grafana"
+tap "hashicorp/tap"
+tap "hudochenkov/sshpass"
+tap "nats-io/nats-tools"
+tap "rabbitmq/tap"
+
+# Core shell & navigation
+brew "direnv"
+brew "eza"
+brew "fd"
+brew "fish"
+brew "ripgrep"
+brew "tmux"
+brew "z"
+
+# Git
+brew "gh"
+brew "git-lfs"
+brew "glab"
+brew "lazygit"
+brew "yadm"
+
+# Editors & docs
+brew "ast-grep"
+brew "glow"
+brew "markdownlint-cli2"
+brew "neovim"
+
+# Cloud & infra
+brew "awscli"
+brew "kubernetes-cli"
+brew "kube-ps1"
+brew "tailscale"
+brew "teller"
+brew "usage"
+
+# Networking & debugging
+brew "gnu-tar"
+brew "wireshark"
+
+# Build tools
+brew "cmake"
+brew "docker-compose"
+brew "luarocks"
+
+# Messaging
+brew "rabbitmqadmin"
+brew "nats-io/nats-tools/nats", trusted: true
+
+# GUI apps
+cask "1password-cli"
+cask "alfred"
+cask "claude-code"
+cask "contexts"
+cask "copilot-cli"
+cask "docker-desktop"
+cask "figma"
+cask "font-0xproto-nerd-font"
+cask "ghostty"
+cask "linear"
+cask "tableplus"
+cask "tunnelblick"
+cask "wireshark-app"
+cask "darrylmorley/whatcable/whatcable"
+
+# Go tools
+go "cmd/go"
+go "cmd/gofmt"
+
+# Kubernetes plugins
+krew "ctx"
+krew "krew"
+krew "ns"
+
+# npm globals
+npm "eslint"
+npm "husky"
+npm "pnpm"
+npm "prettier"
+npm "turbo"

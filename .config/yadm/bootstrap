@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+set class (yadm config local.class)
+
+if test "$class" = mac
+    brew bundle --global
+else if string match -q '*omarchy*' $class
+    sudo pacman -S --needed - < ~/.config/packages/pkglist
+end

@@ -9,7 +9,6 @@ set -gx TERMINAL ghostty
 # aliases
 alias g git
 alias k="kubectl"
-alias argo_ui="kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d | pbcopy && kubectl -n argocd port-forward svc/argocd-server 8080:80 & sleep 2 && open http://localhost:8080 && fg"
 
 set -gx EDITOR nvim
 

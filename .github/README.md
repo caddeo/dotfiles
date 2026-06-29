@@ -1,215 +1,92 @@
-# Programming setup
+# dotfiles
 
-I use this setup both for work and home
+Managed with [yadm](https://yadm.io) across three machines:
 
-My home setup is at [some-other-branch-wip](..link/to/branch)
+- **Mac** — work laptop (macOS, Homebrew)
+- **Omarchy** — home desktop and laptop (Arch Linux)
 
-It's configured both for MAC OS and Arch
+## Tools
 
-## Features
+- [Ghostty](https://ghostty.org) — terminal
+- [Fish](https://fishshell.com) + [Fisher](https://github.com/jorgebucaran/fisher) — shell
+- [Neovim](https://neovim.io) (LazyVim) — editor
+- [tmux](https://github.com/tmux/tmux) — multiplexer
+- [mise](https://mise.jdx.dev) — language version manager
 
-- Ghostty Terminal
-- Fish
-- Nvim using Lazyvim
-- tmux
+## Profiles
 
-### Languages & Technologies
+Each machine has a `local.class` that controls which packages get installed and which dotfile alternates yadm uses.
 
-_These are the main languages and technologies I use._
+| Machine | Class |
+|---|---|
+| Mac work laptop | `mac` |
+| Omarchy desktop | `omarchy,omarchy-desktop` |
+| Omarchy laptop | `omarchy,omarchy-laptop` |
 
-- Kubernetes
-- Terraform
-- Ansible
-- AWS
-- Grafana
-- NodeJS
-- Redis
-- PostgreSQL
-- Rust
-- C
-- Javascript
-- Go
+Set the class once on each machine:
 
-## Requirements
-
-- **OSX**: [Homebrew](https://brew.sh/)
-- a **C** compiler for `nvim-treesitter`. See [here](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
-
-## Existing NVIM setup
-
-According to the [lazyvim documentation](https://www.lazyvim.org/installation)
-
-Make a backup of your current Neovim files:
-
-```shell
-# required
-mv ~/.config/nvim{,.bak}
-
-# optional but recommended
-mv ~/.local/share/nvim{,.bak}
-mv ~/.local/state/nvim{,.bak}
-mv ~/.cache/nvim{,.bak}
+```sh
+yadm config local.class mac                      # Mac
+yadm config local.class omarchy,omarchy-desktop  # Omarchy desktop
+yadm config local.class omarchy,omarchy-laptop   # Omarchy laptop
 ```
 
-## Setup
+Files named with a `##class.X` suffix are alternates — yadm symlinks the right one based on the class. Using comma-separated classes means `##class.omarchy` matches both omarchy machines, while `##class.omarchy-desktop` only matches the desktop. Run `yadm alt` after pulling to regenerate symlinks.
 
-### Font Installation
+## Setup on a new machine
 
-Download _JetBrainsMono Nerd Font_ from [Nerdfonts.com](https://www.nerdfonts.com/font-downloads)
-Install
+> If you have an existing Neovim config, back it up first:
+> ```sh
+> mv ~/.config/nvim{,.bak}
+> mv ~/.local/share/nvim{,.bak}
+> ```
 
-- JetBrainsMonoNerdFontMono-Regular
-- JetBrainsMonoNerdFontMono-Bold
-- JetBrainsMonoNerdFontMono-BoldItalic
-- JetBrainsMonoNerdFontMono-Italic
+### Mac
 
-### Ghostty
-
-OSX
-
-```shell
-brew install --cask ghostty
-```
-
-Fedora
-
-```shell
-dnf copr enable scottames/ghostty
-dnf install ghostty
-```
-
-### Fish
-
-OSX
-
-```shell
-brew install fish
-```
-
-Fedora
-
-```shell
-dnf install fish
-```
-
-Following the [fish documentation](https://fishshell.com/docs/current/#default-shell)
-
-To change your login shell to fish:
-
-1. Add the shell to `/etc/shells` with:
-
-```shell
-command -v fish | sudo tee -a /etc/shells
-```
-
-1. Change your default shell with:
-
-```shell
-chsh -s "$(command -v fish)"
-```
-
-To change it back to another shell, substitute `fish` with `bash`, `tcsh` or `zsh` as appropriate in the above command.
-
-### NVIM
-
-OSX
-
-```shell
-brew install neovim
-```
-
-Fedora
-
-```shell
-sudo dnf install -y neovim python3-neovi
-```
-
-### YADM
-
-OSX
-
-```shell
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install yadm
-```
-
-Fedora 42>
-
-```shell
-dnf config-manager addrepo --from-repofile=https://download.opensuse.org/repositories/home:TheLocehiliosan:yadm/Fedora_42/home:TheLocehiliosan:yadm.repo
-dnf install yadm
-```
-
-### tmux
-
-```shell
-brew install tmux
-```
-
-## Getting started
-
-Install scripts for
-
-- git
-- curl
-- ripgrep
-- fd
-- Fisher
-- fzf
-- z
-- eza
-
-and for [languages and technologies](#languages-technologies)
-
-```
-# install mise-en-place
-curl https://mise.run | sh
-mise install
-
-# install eza
-cargo install eza
-
-# install luarocks
-sudo dnf install luarocks
-
-# install Fisher
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher update
-```
-
-```shell
 yadm clone git@github.com:caddeo/dotfiles.git
-yadm status
+yadm config local.class mac
+yadm bootstrap
 ```
 
-## Adding changes
+### Omarchy
 
+```sh
+sudo pacman -S yadm
+yadm clone git@github.com:caddeo/dotfiles.git
+yadm config local.class omarchy,omarchy-desktop  # or omarchy-laptop
+yadm bootstrap
 ```
-yadm add {path-to-add}
-yadm commit
-yadm push -u origin master:main
+
+## Adding files
+
+**Shared across all machines:**
+
+```sh
+yadm add ~/.config/somefile
+yadm commit -m "add somefile"
+yadm push
 ```
 
-## Keymaps
+**Machine-specific:**
 
-Some cool Keymaps I forget often
+Rename the file with a `##class.<name>` suffix before adding:
 
-### Fish keymaps
+```sh
+mv ~/.config/somefile ~/.config/somefile##class.mac
+yadm add ~/.config/somefile##class.mac
+yadm commit -m "add mac-only somefile"
+yadm push
+```
 
-#### fzf keymaps
+yadm symlinks it to `~/.config/somefile` on matching machines only. Run `yadm alt` after pulling on other machines.
 
-- `ctrl+alt+f` - search directory
-- `ctrl+alt+L`- search git log
-- `ctrl+R`- search history
+## Fish keymaps
 
-### Nvim
-
-## TODO
-
-- Setup [bootstrapping using yadm](https://yadm.io/docs/bootstrap#) based of which OS i am on
-- Make a fancy install script for [Getting started](#getting-started)
-- Configure tmux nvim navigator
-- Make a setup for personal-desktop-omarchy, personal-laptop-omarchy and work-laptop-mac [using yadm](https://yadm.io/docs/alternates#)
-
-### Set up aliases
-
-Using fish `abbr` need to create my common git commands
+| Shortcut | Action |
+|---|---|
+| `ctrl+alt+f` | search directory |
+| `ctrl+alt+L` | search git log |
+| `ctrl+R` | search history |

@@ -1,0 +1,8 @@
+# See https://wiki.hyprland.org/Configuring/Monitors/
+# Run `hyprctl monitors` to list connected displays and available resolutions.
+
+# Built-in laptop display — adjust resolution and scale to match your screen
+monitor=eDP-1, preferred, auto, 1
+
+# External display (uncomment and adjust when docked)
+# monitor=HDMI-A-1, preferred, auto, 1
