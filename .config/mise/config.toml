@@ -1,5 +1,6 @@
 [tools]
 ansible = "latest"
+direnv = "latest"
 fzf = "latest"
 ghq = "latest"
 go = "latest"

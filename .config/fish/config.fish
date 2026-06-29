@@ -1,6 +1,8 @@
 # Unset the default fish greeting text which messes up Zellij
 set fish_greeting
 
+set fish_vi_key_bindings
+
 set -gx TERM xterm-256color
 set -gx TERMINAL ghostty
 
@@ -35,5 +37,6 @@ if test -f $LOCAL_CONFIG
 end
 
 ~/.local/bin/mise activate fish | source
+direnv hook fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
