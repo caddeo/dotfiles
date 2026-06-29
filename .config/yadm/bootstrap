@@ -1,8 +1,17 @@
 #!/usr/bin/env fish
 set class (yadm config local.class)
 
+if not type -q mise
+    curl https://mise.run | sh
+end
+
+~/.local/bin/mise activate fish | source
+mise install
+
 if test "$class" = mac
     brew bundle --global
 else if string match -q '*omarchy*' $class
-    sudo pacman -S --needed - < ~/.config/packages/pkglist
+    sudo pacman -S --needed - <~/.config/packages/pkglist
 end
+
+yadm alt

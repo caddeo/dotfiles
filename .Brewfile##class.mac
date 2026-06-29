@@ -9,7 +9,6 @@ tap "nats-io/nats-tools"
 tap "rabbitmq/tap"
 
 # Core shell & navigation
-brew "direnv"
 brew "eza"
 brew "fd"
 brew "fish"
@@ -66,10 +65,6 @@ cask "tableplus"
 cask "tunnelblick"
 cask "wireshark-app"
 cask "darrylmorley/whatcable/whatcable"
-
-# Go tools
-go "cmd/go"
-go "cmd/gofmt"
 
 # Kubernetes plugins
 krew "ctx"
