@@ -1,7 +1,7 @@
 # Unset the default fish greeting text which messes up Zellij
 set fish_greeting
 
-set fish_vi_key_bindings
+fish_vi_key_bindings
 
 set -gx TERM xterm-256color
 set -gx TERMINAL ghostty
