@@ -1,6 +1,8 @@
 # Unset the default fish greeting text which messes up Zellij
 set fish_greeting
 
+fish_config theme choose cyberdream
+
 fish_vi_key_bindings
 set fish_cursor_default block
 set fish_cursor_insert line
