@@ -27,8 +27,9 @@ Set the class once on each machine:
 
 ```sh
 yadm config local.class mac                      # Mac
-yadm config local.class omarchy,omarchy-desktop  # Omarchy desktop
-yadm config local.class omarchy,omarchy-laptop   # Omarchy laptop
+yadm config local.class omarchy                  # any omarchy
+yadm config --add local.class omarchy-laptop     # omarchy-laptop
+yadm config --add local.class omarchy-desktop    # omarchy-desktop
 ```
 
 Files named with a `##class.X` suffix are alternates — yadm symlinks the right one based on the class. Using comma-separated classes means `##class.omarchy` matches both omarchy machines, while `##class.omarchy-desktop` only matches the desktop. Run `yadm alt` after pulling to regenerate symlinks.
@@ -36,6 +37,7 @@ Files named with a `##class.X` suffix are alternates — yadm symlinks the right
 ## Setup on a new machine
 
 > If you have an existing Neovim config, back it up first:
+>
 > ```sh
 > mv ~/.config/nvim{,.bak}
 > mv ~/.local/share/nvim{,.bak}
