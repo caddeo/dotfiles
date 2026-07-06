@@ -1,0 +1,9 @@
+# See https://wiki.hyprland.org/Configuring/Monitors/
+# Run `hyprctl monitors` to list connected displays and available resolutions.
+
+{% if yadm.class == "desktop" %}
+monitor = HDMI-A-1, 1920x1080@60, auto, 1
+monitor = DP-1, 1920x1080@239.96hz, auto, 1
+{% else %}
+monitor=eDP-1, preferred, auto, 1
+{% endif %}
