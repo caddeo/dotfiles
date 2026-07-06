@@ -17,19 +17,14 @@ set -gx TERMINAL ghostty
 # aliases
 alias g git
 alias k="kubectl"
+alias yup="yadm pull && yadm alt && hyprctl reload"
 
 set -gx EDITOR nvim
 
-set -gx PATH bin $PATH
-set -gx PATH ~/bin $PATH
-set -gx PATH ~/.local/bin $PATH
-
-# Go
+# Path configuration (using fish_add_path for automatic deduplication and safe prepending)
 set -g GOPATH $HOME/go
-set -gx PATH $GOPATH/bin $PATH
-
 set -g KREW_ROOT $HOME/.krew
-set -gx PATH $KREW_ROOT/bin $PATH
+fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin
 
 switch (uname)
     case Darwin
