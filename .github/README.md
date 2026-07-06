@@ -13,26 +13,25 @@ Managed with [yadm](https://yadm.io) across three machines:
 - [tmux](https://github.com/tmux/tmux) — multiplexer
 - [mise](https://mise.jdx.dev) — language version manager
 
-## Profiles
+## Alternates
 
-Each machine has a `local.class` that controls which packages get installed and which dotfile alternates yadm uses.
+Files with a `##<condition>` suffix are alternates — yadm symlinks the right one based on the current machine. Most conditions are detected automatically:
 
-| Machine | Class |
+| Suffix | When it applies |
 |---|---|
-| Mac work laptop | `mac` |
-| Omarchy desktop | `omarchy,omarchy-desktop` |
-| Omarchy laptop | `omarchy,omarchy-laptop` |
+| `##os.Darwin` | macOS (auto-detected) |
+| `##distro.Arch` | Arch Linux (auto-detected) |
+| `##distro.Arch,class.desktop` | Arch desktop (class set manually) |
+| `##distro.Arch,class.laptop` | Arch laptop (class set manually) |
 
-Set the class once on each machine:
+For machine-specific files like monitor layouts, set the class once:
 
 ```sh
-yadm config local.class mac                      # Mac
-yadm config local.class omarchy                  # any omarchy
-yadm config --add local.class omarchy-laptop     # omarchy-laptop
-yadm config --add local.class omarchy-desktop    # omarchy-desktop
+yadm config local.class desktop   # Arch desktop
+yadm config local.class laptop    # Arch laptop
 ```
 
-Files named with a `##class.X` suffix are alternates — yadm symlinks the right one based on the class. Using comma-separated classes means `##class.omarchy` matches both omarchy machines, while `##class.omarchy-desktop` only matches the desktop. Run `yadm alt` after pulling to regenerate symlinks.
+Mac and general Arch configs need no class — they match on OS/distro alone. Run `yadm alt` after pulling to regenerate symlinks.
 
 ## Setup on a new machine
 
@@ -49,7 +48,6 @@ Files named with a `##class.X` suffix are alternates — yadm symlinks the right
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install yadm
 yadm clone git@github.com:caddeo/dotfiles.git
-yadm config local.class mac
 yadm bootstrap
 ```
 
@@ -58,7 +56,7 @@ yadm bootstrap
 ```sh
 sudo pacman -S yadm
 yadm clone git@github.com:caddeo/dotfiles.git
-yadm config local.class omarchy,omarchy-desktop  # or omarchy-laptop
+yadm config local.class desktop  # or: laptop
 yadm bootstrap
 ```
 
@@ -72,18 +70,19 @@ yadm commit -m "add somefile"
 yadm push
 ```
 
-**Machine-specific:**
-
-Rename the file with a `##class.<name>` suffix before adding:
+**Arch-only (e.g. Hyprland, Waybar):**
 
 ```sh
-mv ~/.config/somefile ~/.config/somefile##class.mac
-yadm add ~/.config/somefile##class.mac
-yadm commit -m "add mac-only somefile"
-yadm push
+mv ~/.config/somefile "~/.config/somefile##distro.Arch"
+yadm add "~/.config/somefile##distro.Arch"
 ```
 
-yadm symlinks it to `~/.config/somefile` on matching machines only. Run `yadm alt` after pulling on other machines.
+**Machine-specific (e.g. monitor layout):**
+
+```sh
+mv ~/.config/somefile "~/.config/somefile##distro.Arch,class.desktop"
+yadm add "~/.config/somefile##distro.Arch,class.desktop"
+```
 
 ## Fish keymaps
 
