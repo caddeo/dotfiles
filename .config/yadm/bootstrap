@@ -34,4 +34,6 @@ end
 
 # --- Alternates ---
 
+# Disable automatic alternates on status/checkout/pull/merge (prevents file watcher/warning issues)
+yadm config yadm.auto-alt false
 yadm alt
