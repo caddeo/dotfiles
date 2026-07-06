@@ -3,7 +3,8 @@
 Managed with [yadm](https://yadm.io) across three machines:
 
 - **Mac** — work laptop (macOS, Homebrew)
-- **Omarchy** — home desktop and laptop (Arch Linux)
+- **Omarchy desktop** — home desktop (Arch Linux)
+- **Omarchy laptop** — home laptop (Arch Linux)
 
 ## Tools
 
@@ -13,38 +14,14 @@ Managed with [yadm](https://yadm.io) across three machines:
 - [tmux](https://github.com/tmux/tmux) — multiplexer
 - [mise](https://mise.jdx.dev) — language version manager
 
-## Alternates
+## Setup
 
-Files with a `##<condition>` suffix are alternates — yadm symlinks the right one based on the current machine. Most conditions are detected automatically:
-
-| Suffix | When it applies |
-|---|---|
-| `##os.Darwin` | macOS (auto-detected via `uname -s`) |
-| `##os.Linux` | Linux (auto-detected via `uname -s`) |
-| `##distro.Arch` | Arch Linux (auto-detected via `/etc/os-release`) |
-| `##distro.Arch,class.desktop` | Arch desktop (class set manually) |
-| `##distro.Arch,class.laptop` | Arch laptop (class set manually) |
-
-For machine-specific files like monitor layouts, set the class once:
-
-```sh
-yadm config local.class desktop   # Arch desktop
-yadm config local.class laptop    # Arch laptop
-```
-
-Mac and general Arch configs need no class — they match on OS/distro alone. Run `yadm alt` after pulling to regenerate symlinks.
-
-## Setup on a new machine
-
-> If you have an existing Neovim config, back it up first:
->
+> Back up any existing Neovim config first:
 > ```sh
-> mv ~/.config/nvim{,.bak}
-> mv ~/.local/share/nvim{,.bak}
+> mv ~/.config/nvim{,.bak} && mv ~/.local/share/nvim{,.bak}
 > ```
 
-### Mac
-
+**Mac**
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install yadm
@@ -52,8 +29,7 @@ yadm clone git@github.com:caddeo/dotfiles.git
 yadm bootstrap
 ```
 
-### Omarchy
-
+**Omarchy**
 ```sh
 sudo pacman -S yadm
 yadm clone git@github.com:caddeo/dotfiles.git
@@ -61,40 +37,43 @@ yadm config local.class desktop  # or: laptop
 yadm bootstrap
 ```
 
+## How alternates work
+
+Files suffixed with `##condition` are only symlinked on matching machines. Most conditions are auto-detected — only monitor layout needs a manual class:
+
+| Suffix | Applies on |
+|---|---|
+| `##os.Darwin` | macOS |
+| `##os.Linux` | Linux |
+| `##distro.Arch` | Arch Linux |
+| `##distro.Arch,t` | Arch Linux (template — varies by class) |
+
+The `monitors.conf##distro.Arch,t` template outputs different monitor lines depending on `local.class` (`desktop` or `laptop`).
+
 ## Adding files
 
-**Shared across all machines:**
-
 ```sh
+# All machines
 yadm add ~/.config/somefile
-yadm commit -m "add somefile"
-yadm push
-```
 
-**Arch-only (e.g. Hyprland, Waybar):**
-
-```sh
+# Arch-only
 mv ~/.config/somefile "~/.config/somefile##distro.Arch"
 yadm add "~/.config/somefile##distro.Arch"
-```
 
-**Machine-specific (e.g. monitor layout):**
-
-```sh
+# Machine-specific
 mv ~/.config/somefile "~/.config/somefile##distro.Arch,class.desktop"
 yadm add "~/.config/somefile##distro.Arch,class.desktop"
 ```
 
-## Updating the package list
+Run `yadm alt` after pulling to regenerate symlinks.
 
-On an Omarchy machine, regenerate and commit the package list:
+## Package list (Omarchy)
 
 ```sh
 pacman -Qqen > ~/.config/packages/pkglist      # official repos
-pacman -Qqem > ~/.config/packages/pkglist-aur  # AUR packages
+pacman -Qqem > ~/.config/packages/pkglist-aur  # AUR
 yadm add ~/.config/packages/pkglist ~/.config/packages/pkglist-aur
-yadm commit -m "update package list"
-yadm push
+yadm commit -m "update package list" && yadm push
 ```
 
 ## Fish keymaps
