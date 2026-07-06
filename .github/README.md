@@ -67,15 +67,6 @@ yadm add "~/.config/somefile##distro.Arch,class.desktop"
 
 Run `yadm alt` after pulling to regenerate symlinks.
 
-## Package list (Omarchy)
-
-```sh
-pacman -Qqen > ~/.config/packages/pkglist      # official repos
-pacman -Qqem > ~/.config/packages/pkglist-aur  # AUR
-yadm add ~/.config/packages/pkglist ~/.config/packages/pkglist-aur
-yadm commit -m "update package list" && yadm push
-```
-
 ## Fish keymaps
 
 | Shortcut | Action |
