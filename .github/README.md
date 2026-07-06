@@ -19,8 +19,9 @@ Files with a `##<condition>` suffix are alternates — yadm symlinks the right o
 
 | Suffix | When it applies |
 |---|---|
-| `##os.Darwin` | macOS (auto-detected) |
-| `##distro.Arch` | Arch Linux (auto-detected) |
+| `##os.Darwin` | macOS (auto-detected via `uname -s`) |
+| `##os.Linux` | Linux (auto-detected via `uname -s`) |
+| `##distro.Arch` | Arch Linux (auto-detected via `/etc/os-release`) |
 | `##distro.Arch,class.desktop` | Arch desktop (class set manually) |
 | `##distro.Arch,class.laptop` | Arch laptop (class set manually) |
 
@@ -82,6 +83,18 @@ yadm add "~/.config/somefile##distro.Arch"
 ```sh
 mv ~/.config/somefile "~/.config/somefile##distro.Arch,class.desktop"
 yadm add "~/.config/somefile##distro.Arch,class.desktop"
+```
+
+## Updating the package list
+
+On an Omarchy machine, regenerate and commit the package list:
+
+```sh
+pacman -Qqen > ~/.config/packages/pkglist      # official repos
+pacman -Qqem > ~/.config/packages/pkglist-aur  # AUR packages
+yadm add ~/.config/packages/pkglist ~/.config/packages/pkglist-aur
+yadm commit -m "update package list"
+yadm push
 ```
 
 ## Fish keymaps
