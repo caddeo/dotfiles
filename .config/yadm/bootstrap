@@ -21,6 +21,11 @@ end
 
 # --- Tmux plugins ---
 
+# TPM (Tmux Plugin Manager)
+if not test -d ~/.tmux/plugins/tpm
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+end
+
 # Catppuccin (manual install required for cyberdream theme - avoids name conflicts)
 if not test -d ~/.config/tmux/plugins/catppuccin/tmux/.git
     git clone --depth 1 https://github.com/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
