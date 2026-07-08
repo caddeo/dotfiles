@@ -39,6 +39,7 @@ brew "usage"
 
 # Networking & debugging
 brew "gnu-tar"
+brew "termshark"
 brew "wireshark"
 
 # Build tools
