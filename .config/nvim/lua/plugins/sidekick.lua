@@ -11,6 +11,7 @@ return {
           enabled = true,
         },
       },
+      picker = "telescope",
     },
   },
 }
