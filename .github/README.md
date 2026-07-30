@@ -13,6 +13,7 @@ Managed with [yadm](https://yadm.io) across three machines:
 - [Neovim](https://neovim.io) (LazyVim) — editor
 - [tmux](https://github.com/tmux/tmux) — multiplexer
 - [mise](https://mise.jdx.dev) — language version manager
+- [television](https://github.com/alexpasmantier/television) — fuzzy finder
 
 ## Setup
 
