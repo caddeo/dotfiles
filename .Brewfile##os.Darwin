@@ -13,6 +13,7 @@ brew "eza"
 brew "fd"
 brew "fish"
 brew "ripgrep"
+brew "television"
 brew "tmux"
 brew "z"
 

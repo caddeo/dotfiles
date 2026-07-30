@@ -19,6 +19,10 @@ else if test -f /etc/arch-release
     sudo pacman -S --needed - <~/.config/packages/pkglist
 end
 
+if type -q tv
+    tv update-channels
+end
+
 # --- Tmux plugins ---
 
 # TPM (Tmux Plugin Manager)
