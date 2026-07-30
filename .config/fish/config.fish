@@ -38,6 +38,7 @@ if test -f $LOCAL_CONFIG
     source $LOCAL_CONFIG
 end
 
+tv init fish | source
 ~/.local/bin/mise activate fish | source
 direnv hook fish | source
 
