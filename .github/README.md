@@ -69,8 +69,10 @@ Run `yadm alt` after pulling to regenerate symlinks.
 
 ## Fish keymaps
 
+Fuzzy finding via `tv` (television):
+
 | Shortcut | Action |
 |---|---|
-| `ctrl+alt+f` | search directory |
-| `ctrl+alt+L` | search git log |
+| `ctrl+T` | smart autocomplete |
 | `ctrl+R` | search history |
+| `tv git-log` | search git log |
