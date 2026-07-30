@@ -10,7 +10,6 @@ return {
           backend = "tmux",
           enabled = true,
         },
-        picker = "telescope",
       },
     },
   },
