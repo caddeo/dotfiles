@@ -1,77 +1,70 @@
-# Taps
-tap "aws/tap"
+tap "aws/tap", trusted: true
 tap "darrylmorley/whatcable"
 tap "derailed/k9s"
 tap "grafana/grafana"
 tap "hashicorp/tap"
+tap "homebrew/cask"
 tap "hudochenkov/sshpass"
 tap "nats-io/nats-tools"
 tap "rabbitmq/tap"
-
-# Core shell & navigation
+brew "ast-grep"
+brew "atuin"
+brew "awscli"
+brew "cmake"
+brew "direnv"
+brew "docker-compose"
 brew "eza"
 brew "fd"
 brew "fish"
-brew "ripgrep"
-brew "television"
-brew "tmux"
-brew "z"
-
-# Git
 brew "gh"
 brew "git-lfs"
 brew "glab"
-brew "lazygit"
-brew "yadm"
-
-# Editors & docs
-brew "ast-grep"
 brew "glow"
-brew "markdownlint-cli2"
-brew "neovim"
-
-# Cloud & infra
-brew "awscli"
+brew "gnu-tar"
 brew "kubernetes-cli"
 brew "kube-ps1"
-brew "tailscale"
-brew "teller"
-brew "usage"
-
-# Networking & debugging
-brew "gnu-tar"
-brew "termshark"
-brew "wireshark"
-
-# Build tools
-brew "cmake"
-brew "docker-compose"
+brew "lazygit"
 brew "luarocks"
-
-# Messaging
+brew "markdownlint-cli2"
+brew "mole"
+brew "neovim"
 brew "rabbitmqadmin"
+brew "ripgrep"
+brew "tailscale"
+brew "television"
+brew "teller"
+brew "wireshark"
+brew "termshark"
+brew "tmux"
+brew "usage"
+brew "yadm"
+brew "z"
+brew "aws/tap/eks-node-viewer"
+brew "derailed/k9s/k9s", trusted: true
+brew "hashicorp/tap/packer", trusted: true
+brew "hashicorp/tap/terraform", trusted: true
+brew "hudochenkov/sshpass/sshpass", trusted: true
 brew "nats-io/nats-tools/nats", trusted: true
-
-# GUI apps
 cask "1password-cli"
 cask "alfred"
 cask "contexts"
 cask "docker-desktop"
 cask "figma"
+cask "firefox@developer-edition"
 cask "font-0xproto-nerd-font"
 cask "ghostty"
+cask "godot"
 cask "linear"
 cask "tableplus"
 cask "tunnelblick"
+cask "darrylmorley/whatcable/whatcable", trusted: true
 cask "wireshark-app"
-cask "darrylmorley/whatcable/whatcable"
-
-# Kubernetes plugins
+go "cmd/go"
+go "cmd/gofmt"
+cargo "eza"
 krew "ctx"
 krew "krew"
 krew "ns"
-
-# npm globals
 npm "eslint"
 npm "husky"
 npm "pnpm"
