@@ -8,7 +8,6 @@ docker-buildx
 docker-compose
 eza
 fish
-fzf
 ghostty
 git
 github-cli
