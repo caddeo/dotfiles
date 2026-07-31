@@ -55,9 +55,7 @@ brew "nats-io/nats-tools/nats", trusted: true
 # GUI apps
 cask "1password-cli"
 cask "alfred"
-cask "claude-code"
 cask "contexts"
-cask "copilot-cli"
 cask "docker-desktop"
 cask "figma"
 cask "font-0xproto-nerd-font"
