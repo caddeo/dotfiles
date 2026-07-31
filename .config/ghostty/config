@@ -1,3 +1,10 @@
 theme = dark:cyberdream,light:cyberdream-light
 
 shell-integration-features = ssh-env,ssh-terminfo
+
+background-opacity = 0.90
+
+cursor-style = block
+cursor-style-blink = false
+
+font-size = 12

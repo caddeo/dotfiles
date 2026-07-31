@@ -1,4 +1,3 @@
-# Unset the default fish greeting text which messes up Zellij
 set fish_greeting
 
 fish_config theme choose cyberdream
@@ -20,8 +19,8 @@ alias k="kubectl"
 alias yup="yadm pull && yadm alt && hyprctl reload"
 
 set -gx EDITOR nvim
+set -Ux VISUAL nvim
 
-# Path configuration (using fish_add_path for automatic deduplication and safe prepending)
 set -g GOPATH $HOME/go
 set -g KREW_ROOT $HOME/.krew
 fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin
