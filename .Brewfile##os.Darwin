@@ -1,63 +1,115 @@
 tap "aws/tap", trusted: true
 tap "darrylmorley/whatcable"
 tap "derailed/k9s"
-tap "grafana/grafana"
+tap "grafana/grafana", trusted: true
 tap "hashicorp/tap"
 tap "homebrew/cask"
 tap "hudochenkov/sshpass"
 tap "nats-io/nats-tools"
-tap "rabbitmq/tap"
+tap "rabbitmq/tap", trusted: true
+# Code searching, linting, rewriting
 brew "ast-grep"
+# Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# CLI tool to build, test, debug, and deploy Serverless applications using AWS SAM
+brew "aws-sam-cli"
+# Official Amazon AWS command-line interface
 brew "awscli"
+# Cross-platform make
 brew "cmake"
+# Load/unload environment variables based on $PWD
 brew "direnv"
+# Isolated development environments using Docker
 brew "docker-compose"
+# Modern, maintained replacement for ls
 brew "eza"
+# Simple, fast and user-friendly alternative to find
 brew "fd"
+# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# GitHub command-line tool
 brew "gh"
+# Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
 brew "glab"
+# Render markdown on the CLI
 brew "glow"
+# GNU version of the tar archiving utility
 brew "gnu-tar"
+# Kubernetes command-line interface
 brew "kubernetes-cli"
+# Kubernetes prompt info for bash and zsh
 brew "kube-ps1"
+# Simple terminal UI for git commands
 brew "lazygit"
+# Package manager for the Lua programming language
 brew "luarocks"
+# Fast, flexible, config-based cli for linting Markdown/CommonMark files
 brew "markdownlint-cli2"
+# Deep clean and optimize your Mac
 brew "mole"
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Command-line tool for RabbitMQ that uses the HTTP API
 brew "rabbitmqadmin"
+# Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Easiest, most secure way to use WireGuard and 2FA
 brew "tailscale"
+# General purpose fuzzy finder TUI
 brew "television"
+# Secrets management tool for developers
 brew "teller"
+# Network analyzer and capture tool - without graphical user interface
 brew "wireshark"
+# Terminal UI for tshark, inspired by Wireshark
 brew "termshark"
+# Terminal multiplexer
 brew "tmux"
+# Tool for working with usage-spec CLIs
 brew "usage"
+# Yet Another Dotfiles Manager
 brew "yadm"
+# Tracks most-used directories to make cd smarter
 brew "z"
+# eks-node-viewer is a tool for visualizing dynamic node usage within an EKS cluster.
 brew "aws/tap/eks-node-viewer"
+# Kubernetes CLI To Manage Your Clusters In Style!
 brew "derailed/k9s/k9s", trusted: true
+# Packer
 brew "hashicorp/tap/packer", trusted: true
+# Terraform
 brew "hashicorp/tap/terraform", trusted: true
 brew "hudochenkov/sshpass/sshpass", trusted: true
+# NATS utility
 brew "nats-io/nats-tools/nats", trusted: true
+# Command-line interface for 1Password
 cask "1password-cli"
+# Application launcher and productivity software
 cask "alfred"
+# Allows switching between application windows
 cask "contexts"
+# App to build and share containerised applications and microservices
 cask "docker-desktop"
+# Collaborative team software
 cask "figma"
+# Web browser
 cask "firefox@developer-edition"
 cask "font-0xproto-nerd-font"
+# Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# 2D and 3D game engine
 cask "godot"
+# App to manage software development and track bugs
 cask "linear"
+# Native GUI tool for relational databases
 cask "tableplus"
+# Free and open-source OpenVPN client
 cask "tunnelblick"
+# Menu bar app for USB-C cable diagnostics
 cask "darrylmorley/whatcable/whatcable", trusted: true
+# Network protocol analyzer
 cask "wireshark-app"
 go "cmd/go"
 go "cmd/gofmt"
