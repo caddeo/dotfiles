@@ -1,5 +1,6 @@
 [tools]
 ansible = "latest"
+codex = "latest"
 direnv = "latest"
 ghq = "latest"
 go = "latest"
