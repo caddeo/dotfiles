@@ -38,7 +38,7 @@ if test -f $LOCAL_CONFIG
 end
 
 tv init fish | source
-~/.local/bin/mise activate fish | source
+mise activate fish | source
 direnv hook fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
