@@ -38,19 +38,6 @@ if not test -d ~/.tmux/plugins/tpm
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 end
 
-# Catpupuccin for tmux -- used for cyberdream theme
-if not test -d ~/.config/tmux/plugins/catppuccin/tmux/.git
-    echo "Downloading catppuccin for tmux"
-    git clone --depth 1 https://github.com/catppuccin/tmux ~/.config/tmux/plugins/catppuccin/tmux
-end
-
-# Cyberdream theme for catppuccin tmux
-set -l cyberdream ~/.config/tmux/plugins/catppuccin/tmux/themes/catppuccin_cyberdream_tmux.conf
-if not test -f $cyberdream
-    echo "Installing Cyberdream for tmux"
-    curl -fsSL "https://raw.githubusercontent.com/scottmckendry/cyberdream.nvim/main/extras/tmux/cyberdream.conf" -o $cyberdream
-end
-
 # Disable automatic alternates on status/checkout/pull/merge (prevents file watcher/warning issues)
 yadm config yadm.auto-alt false
 yadm alt
