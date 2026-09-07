@@ -65,6 +65,8 @@ brew "teller"
 brew "wireshark"
 # Terminal UI for tshark, inspired by Wireshark
 brew "termshark"
+# Simple TTY terminal I/O application
+brew "tio"
 # Terminal multiplexer
 brew "tmux"
 # Tool for working with usage-spec CLIs
