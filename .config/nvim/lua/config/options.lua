@@ -5,3 +5,6 @@
 
 -- Only run prettier when the project has an explicit prettier config file
 vim.g.lazyvim_prettier_needs_config = true
+
+-- for some reason blink cmp sets ai by default ew
+vim.g.ai_cmp = false
