@@ -2,7 +2,6 @@
 1password = "latest"
 1password-cli = "latest"
 ansible = "latest"
-codex = "latest"
 direnv = "latest"
 eza = "latest"
 ghq = "latest"
