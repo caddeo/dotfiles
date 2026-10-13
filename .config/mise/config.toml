@@ -16,7 +16,7 @@ node = "latest"
 "npm:markdown-toc" = "latest"
 pipx = "latest"
 python = "latest"
-rust = { version = "latest", components = ["rust-analyzer"] }
+rust = { version = "latest" }
 television = "latest"
 tmux = "latest"
 usage = "latest"
