@@ -51,6 +51,8 @@ brew "markdownlint-cli2"
 brew "mole"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # Command-line tool for RabbitMQ that uses the HTTP API
 brew "rabbitmqadmin"
 # Search tool like grep and The Silver Searcher
@@ -119,8 +121,3 @@ cargo "eza"
 krew "ctx"
 krew "krew"
 krew "ns"
-npm "eslint"
-npm "husky"
-npm "pnpm"
-npm "prettier"
-npm "turbo"
