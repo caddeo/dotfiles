@@ -5,15 +5,18 @@ ansible = "latest"
 direnv = "latest"
 eza = "latest"
 ghq = "latest"
+github-cli = { version = "latest", os = "Linux" }
 go = "latest"
 golangci-lint = "latest"
+lua = { version = "latest", os = "Linux" }
 markdownlint-cli2 = "latest"
 neovim = "latest"
 node = "latest"
 pipx = "latest"
 python = "latest"
-rust = { version = "latest" }
+rust =  "latest"
 television = "latest"
+tmux = { version = "latest", os = "Linux" }
 usage = "latest"
 uv = "latest"
 zoxide = "latest"
