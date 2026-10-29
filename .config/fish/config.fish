@@ -27,6 +27,7 @@ set -Ux VISUAL nvim
 
 set -g GOPATH $HOME/go
 set -g KREW_ROOT $HOME/.krew
+set -gx PATH $PATH $HOME/.krew/bin
 fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin
 
 switch (uname)
