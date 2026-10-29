@@ -24,6 +24,7 @@ set -Ux VISUAL nvim
 set -g GOPATH $HOME/go
 set -g KREW_ROOT $HOME/.krew
 set -g DOCKERPATH $HOME/.docker
+
 fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin $DOCKERPATH/bin
 
 switch (uname)
@@ -39,8 +40,9 @@ if test -f $LOCAL_CONFIG
 end
 
 tv init fish | source
-mise activate fish | source
 direnv hook fish | source
 kubectl completion fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
+
+mise activate fish | source

@@ -10,12 +10,14 @@ golangci-lint = "latest"
 markdownlint-cli2 = "latest"
 neovim = "latest"
 node = "latest"
-pipx = "latest"
 python = "latest"
-rust =  "latest"
+rust = "latest"
 television = "latest"
 usage = "latest"
 uv = "latest"
 zoxide = "latest"
-
+lua = "latest"
 "npm:markdown-toc" = "latest"
+
+[settings.self_update]
+auto = true
