@@ -1,7 +1,3 @@
-# The following lines were added by Docker Desktop to add commands to your PATH.
-export PATH="$PATH:/Users/pcni/.docker/bin"
-# End of Docker Desktop section.
-
 set fish_greeting
 
 fish_config theme choose cyberdream
@@ -27,8 +23,8 @@ set -Ux VISUAL nvim
 
 set -g GOPATH $HOME/go
 set -g KREW_ROOT $HOME/.krew
-set -gx PATH $PATH $HOME/.krew/bin
-fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin
+set -g DOCKERPATH $HOME/.docker
+fish_add_path bin ~/bin ~/.local/bin $GOPATH/bin $KREW_ROOT/bin $DOCKERPATH/bin
 
 switch (uname)
     case Darwin
