@@ -1,6 +1,8 @@
 return {
   "carldaws/miser.nvim",
   config = function()
-    require("miser").setup()
+    require("miser").setup({
+      auto_lsp = false,
+    })
   end,
 }

@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/pcni/.docker/bin"
+# End of Docker Desktop section.
+
 set fish_greeting
 
 fish_config theme choose cyberdream
@@ -40,5 +44,6 @@ end
 tv init fish | source
 mise activate fish | source
 direnv hook fish | source
+kubectl completion fish | source
 
 abbr -a -- fish-reload-config 'source ~/.config/fish/**/*.fish'
