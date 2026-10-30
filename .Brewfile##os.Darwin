@@ -5,6 +5,7 @@ tap "grafana/grafana", trusted: true
 tap "hashicorp/tap"
 tap "homebrew/cask"
 tap "hudochenkov/sshpass"
+tap "morantron/tmux-fingers"
 tap "nats-io/nats-tools"
 tap "rabbitmq/tap", trusted: true
 # Code searching, linting, rewriting
@@ -37,6 +38,8 @@ brew "glab"
 brew "glow"
 # GNU version of the tar archiving utility
 brew "gnu-tar"
+# Kubernetes package manager
+brew "helm"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # Kubernetes prompt info for bash and zsh
