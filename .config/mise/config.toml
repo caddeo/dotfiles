@@ -18,6 +18,3 @@ uv = "latest"
 zoxide = "latest"
 lua = "latest"
 "npm:markdown-toc" = "latest"
-
-[settings.self_update]
-auto = true
